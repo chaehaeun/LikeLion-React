@@ -1,15 +1,35 @@
-// JavaScript 지원 여부 처리 예시
-// import './utils/supportJavaScript.js';
+// React 컴포넌트 vs 엘리먼트
+import { Group } from './learn/react.components.js';
 
-// 바닐라 스크립트(동적 마크업 & 렌더링) 예시
-// import { state, render, update } from './learn/vanilla.script.js';
-// render(state);
-// setTimeout(() => update({ headline: 'React 처럼 생각하기'}), 1500);
-// setTimeout(() => update({ description: '가상 DOM 그리고 마운트. 상태 업데이트 → 리-렌더링'}), 3000);
-// setTimeout(() => update({ subjects: ['가상 DOM 그리고 마운트', '상태 업데이트 → 리-렌더링']}), 4500);
+// 함수 타입
+// React 월드
+// React 엘리먼트 생성 과정에서는 반드시 React.createElement API
 
-// 가상 DOM 구현(모방) 예시
-// import './learn/likereact.script.js';
+// 사용법 1
+// 웹브라우저가 인식 가능한 HTML 표준 엘리먼트 이름 (문자 값)
+// console.log(React.createElement('details'));
+// 사용법 2
+// 컴포넌트 함수 또는 클래스 참조 전달 
+// console.log(React.createElement(Group));
 
-// React (가상 DOM → 렌더링) 예시
-// import './learn/react.script.js';
+// ReactDOM이 하는 일은 React가 한 결과(가상 DOM 생성)를 
+// 실제 DOM에 렌더링(마운트)하는 것입니다.
+
+// ReactDOM의 절차
+// 1. ReactDOM의 루트를 생성한다. (실제 DOM 요소를 전달)
+// ReactDOM.createRoot(document.getElementById('root'));
+// 2. 생성된 ReactDOM의 루트 요소(객체)를 통해 실제 DOM에 렌더링 한다.
+// reactDomRoot.render();
+
+// const React루트객체 = ReactDOM.루트요소생성하기(실제 DOM 요소)
+// React루트객체.렌더링(React 엘리먼트);
+
+const reactDomRoot = ReactDOM.createRoot(document.getElementById('root'));
+
+reactDomRoot.render(
+  // HTML, XML
+  <div role="group" lang="en">Group Element</div>
+  // React.createElement(Group)
+);
+
+
