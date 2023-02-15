@@ -1,24 +1,14 @@
-class App extends React.Component {
-  // this.state
-  state = {
-    headline: "React Application",
-  };
+import App from './App.js';
 
-  render() {
-    return (
-      <div data-component="App">
-        <h1>React Application</h1>
-      </div>
-    );
-  }
-}
+// ES 구조 분해 할당
+// 번들링 (트리 쉐이킹)
+const { StrictMode } = React;
+const { createRoot } = ReactDOM;
 
-/* -------------------------------------------------------------------------- */
-
-const reactDomRoot = ReactDOM.createRoot(document.getElementById("root"));
+const reactDomRoot = createRoot(document.getElementById('root'));
 
 reactDomRoot.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>
+  </StrictMode>
 );
