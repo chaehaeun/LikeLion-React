@@ -1,26 +1,15 @@
 import "./App.css";
 
 // 이미지 에셋 불러오기
-import logo from "./assets/logo.svg";
+// import logo from "./assets/logo.svg";
+import Counter from "./components/Counter";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="React" />
-        <p>
-          Edit <code>src/App.js</code> 파일을 수정하면{" "}
-          <abbr title="어쩌고웅앵">HMR</abbr>, Live Reload 됩니다.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Counter count={9} />
+      <Counter count={1} />
+      <Counter count={2} />
     </div>
   );
 }
